@@ -5,9 +5,11 @@ from django.conf import settings
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('eventex.core.views',
+urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'home', name='home'),
+    url(r'^$', 'eventex.core.views.home', name='home'),
+    url(r'^inscricao/$', 'eventex.subscriptions.views.subscribe', name='subscribe'),
+    url(r'^inscricao/(\d+)/$', 'eventex.subscriptions.views.detail', name='detail'),
     # url(r'^wttd/', include('wttd.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
